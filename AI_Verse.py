@@ -20,11 +20,11 @@ from flask_cors import CORS
 app= Flask(__name__)
 CORS(app)
 
-MODEL_PATH = os.path.join(os.getcwd(), "D:\Desktop\ABC\model.pth")
+MODEL_PATH = os.path.join(os.getcwd(), "model.pth")
 d = torch.device("cpu")
 mobilenet = models.mobilenet_v2(pretrained=True)
 mobilenet.classifier[1] = torch.nn.Linear(mobilenet.last_channel, 2)
-mobilenet.load_state_dict(torch.load("D:\Desktop\ABC\model.pth", map_location=d))
+mobilenet.load_state_dict(torch.load(MODEL_PATH, map_location=d))
 model= mobilenet.to(d)
 
 def predicting_(img):
