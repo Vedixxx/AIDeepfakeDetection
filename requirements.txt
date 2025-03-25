@@ -1,0 +1,10 @@
+flask
+flask-cors
+torch
+torchvision
+numpy
+pandas
+opencv-python
+matplotlib
+Pillow
+tqdm
